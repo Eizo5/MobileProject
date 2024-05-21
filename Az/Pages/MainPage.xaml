@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Az.MainPage"
+             Title="Student" >
+
+    <ScrollView  BackgroundColor="#D9D9D9" >
+        <StackLayout  Margin="10">
+            <StackLayout >
+                <Label Text="Student Name:" Margin="10"/>
+                <Entry 
+                x:Name="Student_Name"
+                Placeholder="Enter student name"
+                PlaceholderColor="Black"
+                WidthRequest="600"
+                BackgroundColor="White"
+                HorizontalOptions="Start"/>
+
+                <Label Text="Student Department:" Margin="10"/>
+                <Entry 
+                x:Name="Student_Department"
+                Placeholder="Enter student department"
+                PlaceholderColor="Black"
+                BackgroundColor="White"
+                WidthRequest="600"
+                HorizontalOptions="Start"/>
+            </StackLayout>
+
+            <StackLayout  Orientation="Horizontal" Margin="10">
+                <Button x:Name="Add_Student"
+                        Text="Add"
+                        TextColor="White"
+                        BackgroundColor="Blue"
+                        WidthRequest="70"
+                        HorizontalOptions="Start"
+                        Margin="2"
+                        Clicked="Add_Student_Clicked"
+                        />
+
+                <Button x:Name="Show_Student"
+                    Text="Show"
+                    TextColor="White"
+                    BackgroundColor="Green"
+                    WidthRequest="70"
+                    HorizontalOptions="Start"
+                    Margin="2"
+                    Clicked="Show_Student_Clicked"
+                        />
+            </StackLayout>
+
+            <StackLayout  Margin="10" >
+                <Label Text="STUDENTS LIST"  FontSize="30" FontAttributes="Bold" />
+
+                <ListView x:Name="Student_List_View" BackgroundColor="White" ItemTapped="Student_List_View_ItemTapped" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ScrollView >
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Student ID" 
+                                               TextColor="Black"
+                                               HorizontalOptions="Start" />
+                                        <Label Text="{Binding StudentID}"
+                                                 HorizontalOptions="Start" />
+
+                                        <Label Text="Student Name" 
+                                               TextColor="Black"
+                                               HorizontalOptions="Center" />
+                                        <Label Text="{Binding StudentName}"
+                                               HorizontalOptions="Center"/>
+
+                                        <Label Text="Student Department" 
+                                               TextColor="Black"
+                                               HorizontalOptions="EndAndExpand" />
+                                        <Label Text="{Binding StudentDepartment}" 
+                                               HorizontalOptions="EndAndExpand"/>
+                                        
+                                        <Button Text="Delete"
+                                                x:Name="Delete_Student"
+                                                BackgroundColor="red"
+                                                BindingContext="{Binding StudentID}"
+                                                TextColor="White"
+                                                Clicked="Delete_Student_Clicked"
+                                                />
+                                    </StackLayout>
+                                </ScrollView>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
