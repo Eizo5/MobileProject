@@ -19,7 +19,7 @@
                 <Label Text="Course Name:" Margin="10"/>
                 <Entry 
              x:Name="Course_Name"
-             Placeholder="Enter course code"
+             Placeholder="Enter course Name"
              PlaceholderColor="Black"
              BackgroundColor="White"
              WidthRequest="600"
