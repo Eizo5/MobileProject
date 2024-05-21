@@ -26,7 +26,7 @@
              HorizontalOptions="Start"/>
             </StackLayout>
 
-            <StackLayout  Orientation="Horizontal" Margin="10">
+            <StackLayout  Orientation="Horizontal" Margin="10" >
                 <Button x:Name="Add_Course"
                      Text="Add"
                      TextColor="White"
@@ -48,31 +48,47 @@
                         />
             </StackLayout>
 
-            <StackLayout  Margin="10" >
+            <StackLayout  Margin="10" BackgroundColor="White" >
                 <Label Text="COURSES LIST"  FontSize="30" FontAttributes="Bold" />
 
-                <ListView x:Name="Course_List_View" BackgroundColor="White" ItemTapped="Course_List_View_ItemTapped">
+
+                <StackLayout Orientation="Horizontal" Margin="10">
+                    <Label Text="Course ID" 
+                              TextColor="Black"
+                              HorizontalOptions="Start"
+                           Margin="5"
+                           />
+
+                    <Label Text="Course Code" 
+                               TextColor="Black"
+                               HorizontalOptions="Center"
+                                                      Margin="5"
+                           />
+
+                    <Label Text="Course Name" 
+                               TextColor="Black"
+                                HorizontalOptions="End"
+                                                      Margin="5"
+                           />
+
+
+                </StackLayout>
+
+                <ListView x:Name="Course_List_View"  ItemTapped="Course_List_View_ItemTapped">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <ScrollView >
                                     <StackLayout Orientation="Horizontal">
 
-                                        <Label Text="Course ID" 
-                                              TextColor="Black"
-                                              HorizontalOptions="Start" />
+
                                         <Label Text="{Binding CourseID}"
                                                 HorizontalOptions="Start" />
 
-                                        <Label Text="Course Code" 
-                                              TextColor="Black"
-                                              HorizontalOptions="Center" />
                                         <Label Text="{Binding CourseCode}"
                                               HorizontalOptions="Center"/>
 
-                                        <Label Text="Course Name" 
-                                              TextColor="Black"
-                                              HorizontalOptions="EndAndExpand" />
+
                                         <Label Text="{Binding CourseName}" 
                                               HorizontalOptions="EndAndExpand"/>
 

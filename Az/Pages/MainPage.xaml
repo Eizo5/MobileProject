@@ -48,30 +48,47 @@
                         />
             </StackLayout>
 
-            <StackLayout  Margin="10" >
-                <Label Text="STUDENTS LIST"  FontSize="30" FontAttributes="Bold" />
+            <StackLayout  Margin="10" BackgroundColor="White"  >
+                        <Label Text="STUDENTS LIST" FontSize="30" FontAttributes="Bold" />
 
-                <ListView x:Name="Student_List_View" BackgroundColor="White" ItemTapped="Student_List_View_ItemTapped" >
+                <StackLayout Orientation="Horizontal" Margin="10">
+                    <Label Text="Student ID" 
+                              TextColor="Black"
+                              HorizontalOptions="Start"
+                           Margin="5"
+                           />
+
+                    <Label Text="Student Name" 
+                               TextColor="Black"
+                               HorizontalOptions="Center"
+                                                      Margin="5"
+                           />
+
+                    <Label Text="Student Department" 
+                               TextColor="Black"
+                                HorizontalOptions="End"
+                                                      Margin="5"
+                           />
+
+
+                </StackLayout>
+
+
+                <ListView x:Name="Student_List_View" BackgroundColor="White" ItemTapped="Student_List_View_ItemTapped" WidthRequest="600" HorizontalOptions="Start" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <ScrollView >
                                     <StackLayout Orientation="Horizontal">
-                                        <Label Text="Student ID" 
-                                               TextColor="Black"
-                                               HorizontalOptions="Start" />
+ 
                                         <Label Text="{Binding StudentID}"
                                                  HorizontalOptions="Start" />
 
-                                        <Label Text="Student Name" 
-                                               TextColor="Black"
-                                               HorizontalOptions="Center" />
+                                        
                                         <Label Text="{Binding StudentName}"
                                                HorizontalOptions="Center"/>
 
-                                        <Label Text="Student Department" 
-                                               TextColor="Black"
-                                               HorizontalOptions="EndAndExpand" />
+
                                         <Label Text="{Binding StudentDepartment}" 
                                                HorizontalOptions="EndAndExpand"/>
                                         
