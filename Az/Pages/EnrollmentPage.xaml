@@ -6,9 +6,9 @@
     
     <ScrollView  BackgroundColor="#D9D9D9" >
         <StackLayout  Margin="10">
-
+    
             <StackLayout Orientation="Horizontal" >
-
+                <Button Text="Show Selections" x:Name="Show_Selection_Button" Clicked="Show_Selection_Button_Clicked" />
                 <StackLayout  Margin="10" BackgroundColor="White"  >
                     <Label Text="STUDENTS LIST" FontSize="30" FontAttributes="Bold" />
 
@@ -42,15 +42,15 @@
                                     <ScrollView >
                                         <StackLayout Orientation="Horizontal">
 
-                                            <Label Text="{Binding StudentID}"
+                                            <Label      TextColor="Black" Text="{Binding Student_ID}"
                                                  HorizontalOptions="Start" />
 
 
-                                            <Label Text="{Binding StudentName}"
+                                            <Label      TextColor="Black" Text="{Binding Student_Name}"
                                                HorizontalOptions="Center"/>
 
 
-                                            <Label Text="{Binding StudentDepartment}" 
+                                            <Label      TextColor="Black" Text="{Binding Student_Department}" 
                                                HorizontalOptions="EndAndExpand"/>
                                         </StackLayout>
                                     </ScrollView>
@@ -93,22 +93,17 @@
                                         <StackLayout Orientation="Horizontal">
 
 
-                                            <Label Text="{Binding CourseID}"
+                                            <Label      TextColor="Black" Text="{Binding Course_ID}"
                                               HorizontalOptions="Start" />
 
-                                            <Label Text="{Binding CourseCode}"
+                                            <Label      TextColor="Black" Text="{Binding Course_Code}"
                                             HorizontalOptions="Center"/>
 
 
-                                            <Label Text="{Binding CourseName}" 
+                                            <Label      TextColor="Black" Text="{Binding Course_Name}" 
                                             HorizontalOptions="EndAndExpand"/>
 
-                                            <Button Text="Delete"
-                                             x:Name="Delete_Course"
-                                             BackgroundColor="red"
-                                             BindingContext="{Binding CourseID}"
-                                             TextColor="White" 
-                                              />
+                        
                                         </StackLayout>
                                     </ScrollView>
                                 </ViewCell>
@@ -174,18 +169,19 @@
 
 
 
-                                        <Label Text="{Binding EnrollmentID}"
+                                        <Label      TextColor="Black" Text="{Binding Enroll_ID}"
                                                 HorizontalOptions="Start" />
 
 
-                                        <Label Text="{Binding StudentID}"
+                                        <Label      TextColor="Black" Text="{Binding Student_ID}"
                                               HorizontalOptions="Center"/>
 
-                                        <Label Text="{Binding CourseID}" 
+                                        <Label      TextColor="Black" Text="{Binding Course_ID}" 
                                               HorizontalOptions="EndAndExpand"/>
 
                                         <Button Text="Delete"
                                                x:Name="Delete_Enrollment"
+                                                BindingContext="{Binding Enroll_ID}"
                                                BackgroundColor="red"
                                                TextColor="White"
                                                 Clicked="Delete_Enrollment_Clicked"

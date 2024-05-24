@@ -12,6 +12,7 @@
              x:Name="Course_Code"
              Placeholder="Enter course code"
              PlaceholderColor="Black"
+             TextColor="Black"
              WidthRequest="600"
              BackgroundColor="White"
              HorizontalOptions="Start"/>
@@ -21,6 +22,7 @@
              x:Name="Course_Name"
              Placeholder="Enter course Name"
              PlaceholderColor="Black"
+             TextColor="Black"
              BackgroundColor="White"
              WidthRequest="600"
              HorizontalOptions="Start"/>
@@ -82,20 +84,20 @@
                                     <StackLayout Orientation="Horizontal">
 
 
-                                        <Label Text="{Binding CourseID}"
+                                        <Label   TextColor="Black" Text="{Binding Course_ID}"
                                                 HorizontalOptions="Start" />
 
-                                        <Label Text="{Binding CourseCode}"
+                                        <Label   TextColor="Black" Text="{Binding Course_Code}"
                                               HorizontalOptions="Center"/>
 
 
-                                        <Label Text="{Binding CourseName}" 
+                                        <Label   TextColor="Black" Text="{Binding Course_Name}" 
                                               HorizontalOptions="EndAndExpand"/>
 
                                         <Button Text="Delete"
                                                x:Name="Delete_Course"
                                                BackgroundColor="red"
-                                               BindingContext="{Binding CourseID}"
+                                               BindingContext="{Binding Course_ID}"
                                                TextColor="White" 
                                                 Clicked="Delete_Course_Clicked"
                                                 />

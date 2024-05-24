@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Az.DataTransactions;
+using Microsoft.Extensions.Logging;
 
 namespace Az
 {
@@ -14,6 +15,10 @@ namespace Az
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+
+            string _dbPath = Path.Combine(FileSystem.AppDataDirectory, "test.db");
+
+            builder.Services.AddSingleton( s => ActivatorUtilities.CreateInstance<DBTrans>(s, _dbPath) );
 
 #if DEBUG
     		builder.Logging.AddDebug();

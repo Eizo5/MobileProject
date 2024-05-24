@@ -12,6 +12,7 @@
                 x:Name="Student_Name"
                 Placeholder="Enter student name"
                 PlaceholderColor="Black"
+                TextColor="Black"
                 WidthRequest="600"
                 BackgroundColor="White"
                 HorizontalOptions="Start"/>
@@ -21,6 +22,7 @@
                 x:Name="Student_Department"
                 Placeholder="Enter student department"
                 PlaceholderColor="Black"
+                TextColor="Black"
                 BackgroundColor="White"
                 WidthRequest="600"
                 HorizontalOptions="Start"/>
@@ -48,7 +50,7 @@
                         />
             </StackLayout>
 
-            <StackLayout  Margin="10" BackgroundColor="White"  >
+            <StackLayout  Margin="10" BackgroundColor="Blue"  >
                         <Label Text="STUDENTS LIST" FontSize="30" FontAttributes="Bold" />
 
                 <StackLayout Orientation="Horizontal" Margin="10">
@@ -74,28 +76,28 @@
                 </StackLayout>
 
 
-                <ListView x:Name="Student_List_View" BackgroundColor="White" ItemTapped="Student_List_View_ItemTapped" WidthRequest="600" HorizontalOptions="Start" >
+                <ListView x:Name="Student_List_View"  ItemTapped="Student_List_View_ItemTapped" WidthRequest="600" HorizontalOptions="Start" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <ScrollView >
                                     <StackLayout Orientation="Horizontal">
  
-                                        <Label Text="{Binding StudentID}"
+                                        <Label TextColor="Black" Text="{Binding Student_ID}"
                                                  HorizontalOptions="Start" />
 
                                         
-                                        <Label Text="{Binding StudentName}"
+                                        <Label TextColor="black" Text="{Binding Student_Name}"
                                                HorizontalOptions="Center"/>
 
 
-                                        <Label Text="{Binding StudentDepartment}" 
+                                        <Label TextColor="black" Text="{Binding Student_Department}" 
                                                HorizontalOptions="EndAndExpand"/>
                                         
                                         <Button Text="Delete"
                                                 x:Name="Delete_Student"
                                                 BackgroundColor="red"
-                                                BindingContext="{Binding StudentID}"
+                                                BindingContext="{Binding Student_ID}"
                                                 TextColor="White"
                                                 Clicked="Delete_Student_Clicked"
                                                 />
