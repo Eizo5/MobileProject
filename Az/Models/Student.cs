@@ -14,5 +14,7 @@ namespace Az.Models
         public int Student_ID { get; set; }
         public string Student_Name { get; set; }
         public string Student_Department { get; set; }
+
+        public bool IsSelected { get; set; }
     }
 }

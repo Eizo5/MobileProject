@@ -16,7 +16,7 @@ namespace Az
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-            string _dbPath = Path.Combine(FileSystem.AppDataDirectory, "test.db");
+            string _dbPath = Path.Combine(FileSystem.AppDataDirectory, "studentsenrollments.db");
 
             builder.Services.AddSingleton( s => ActivatorUtilities.CreateInstance<DBTrans>(s, _dbPath) );
 

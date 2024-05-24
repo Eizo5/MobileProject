@@ -3,26 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Az.EnrollmentPage"
              Title="Enrollment">
-    
-    <ScrollView  BackgroundColor="#D9D9D9" >
+
+    <ScrollView  BackgroundColor="LightSteelBlue" >
         <StackLayout  Margin="10">
-    
-            <StackLayout Orientation="Horizontal" >
-                <Button Text="Show Selections" x:Name="Show_Selection_Button" Clicked="Show_Selection_Button_Clicked" />
-                <StackLayout  Margin="10" BackgroundColor="White"  >
-                    <Label Text="STUDENTS LIST" FontSize="30" FontAttributes="Bold" />
+            <Button Text="Show" x:Name="Show_Selection_Button" Clicked="Show_Selection_Button_Clicked" WidthRequest="100" />
+            <StackLayout Orientation="Vertical" >
+                
+                <StackLayout  Margin="10" BackgroundColor="White" WidthRequest="350" >
+                    <Label Text="Students" FontSize="25" FontAttributes="Bold" Margin="10, 15, 0, 0"/>
 
                     <StackLayout Orientation="Horizontal" Margin="10">
                         <Label Text="Student ID" 
                               TextColor="Black"
                               HorizontalOptions="Start"
-                           Margin="5"
+                              Margin="5, 5 ,10 ,5"
                            />
 
                         <Label Text="Student Name" 
                                TextColor="Black"
                                HorizontalOptions="Center"
-                                                      Margin="5"
+                               Margin="5, 5 ,10 ,5"
                            />
 
                         <Label Text="Student Department" 
@@ -35,25 +35,25 @@
                     </StackLayout>
 
 
-                    <ListView x:Name="Student_List_View"  ItemTapped="Student_List_View_ItemTapped" WidthRequest="600" HorizontalOptions="Start" >
+                    <ListView x:Name="Student_List_View"  ItemTapped="Student_List_View_ItemTapped" WidthRequest="340" HeightRequest="100" HorizontalOptions="Start" >
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
-                                    <ScrollView >
+                                  
                                         <StackLayout Orientation="Horizontal">
 
                                             <Label      TextColor="Black" Text="{Binding Student_ID}"
-                                                 HorizontalOptions="Start" />
+                                                Margin="40, 10 ,0 ,0" />
 
 
                                             <Label      TextColor="Black" Text="{Binding Student_Name}"
-                                               HorizontalOptions="Center"/>
+                                               Margin="50, 10, 0 ,0"/>
 
 
                                             <Label      TextColor="Black" Text="{Binding Student_Department}" 
-                                               HorizontalOptions="EndAndExpand"/>
+                                               Margin="80 ,10, 0, 0"/>
                                         </StackLayout>
-                                    </ScrollView>
+                                   
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
@@ -61,21 +61,21 @@
 
                 </StackLayout>
 
-                <StackLayout  Margin="10" BackgroundColor="White" >
-                    <Label Text="COURSES LIST"  FontSize="30" FontAttributes="Bold" />
+                <StackLayout  Margin="10" BackgroundColor="White" WidthRequest="350">
+                    <Label Text="Courses"  FontSize="25" FontAttributes="Bold" Margin="10, 15, 0, 0" />
 
 
                     <StackLayout Orientation="Horizontal" Margin="10">
                         <Label Text="Course ID" 
                             TextColor="Black"
                             HorizontalOptions="Start"
-                         Margin="5"
+                            Margin="5, 5 ,10 ,5"
                          />
 
                         <Label Text="Course Code" 
                              TextColor="Black"
                              HorizontalOptions="Center"
-                                                    Margin="5"
+                             Margin="5, 5 ,10 ,5"
                          />
 
                         <Label Text="Course Name" 
@@ -85,27 +85,27 @@
                          />
                     </StackLayout>
 
-                    <ListView x:Name="Course_List_View"  ItemTapped="Course_List_View_ItemTapped">
+                    <ListView x:Name="Course_List_View"  ItemTapped="Course_List_View_ItemTapped" SelectionMode="Single">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
-                                    <ScrollView >
+                                    
                                         <StackLayout Orientation="Horizontal">
 
 
                                             <Label      TextColor="Black" Text="{Binding Course_ID}"
-                                              HorizontalOptions="Start" />
+                                              Margin="40 ,10 ,0 ,0" />
 
                                             <Label      TextColor="Black" Text="{Binding Course_Code}"
-                                            HorizontalOptions="Center"/>
+                                           Margin="45, 10 ,0 ,0"/>
 
 
                                             <Label      TextColor="Black" Text="{Binding Course_Name}" 
-                                            HorizontalOptions="EndAndExpand"/>
+                                           Margin="65 ,10 ,0 ,0"/>
 
                         
                                         </StackLayout>
-                                    </ScrollView>
+                                   
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
@@ -114,30 +114,30 @@
 
             </StackLayout>
 
-            <StackLayout  Orientation="Horizontal" Margin="10">
+            <StackLayout  Orientation="Vertical" Margin="10" HorizontalOptions="Center">
                 <Button x:Name="Add_Enrollment"
                        Text="Add"
                        TextColor="White"
-                       BackgroundColor="Blue"
-                       WidthRequest="70"
+                       BackgroundColor="purple"
+                       WidthRequest="100"
                        HorizontalOptions="Start"
-                       Margin="2" 
+                       Margin="10" 
                         Clicked="Add_Enrollment_Clicked"
                         />
 
                 <Button x:Name="Show_Enrollment"
                    Text="Show"
                    TextColor="White"
-                   BackgroundColor="Green"
-                   WidthRequest="70"
+                   BackgroundColor="blue"
+                   WidthRequest="100"
                    HorizontalOptions="Start"
-                   Margin="2"
+                   Margin="10"
                         Clicked="Show_Enrollment_Clicked"
                         />
             </StackLayout>
 
-            <StackLayout  Margin="10" BackgroundColor="White" >
-                <Label Text="ENROLLMENT LIST" HorizontalOptions="Start" FontSize="30" FontAttributes="Bold"  />
+            <StackLayout  Margin="10" BackgroundColor="White" WidthRequest="350" >
+                <Label Text="Enrollments" HorizontalOptions="Start" FontSize="25" FontAttributes="Bold" Margin="10, 15, 0, 0" />
                 
 
 
@@ -170,16 +170,16 @@
 
 
                                         <Label      TextColor="Black" Text="{Binding Enroll_ID}"
-                                                HorizontalOptions="Start" />
+                                                Margin="40, 10 ,0 ,0"/>
 
 
                                         <Label      TextColor="Black" Text="{Binding Student_ID}"
-                                              HorizontalOptions="Center"/>
+                                              Margin="90 ,10, 0 ,0"/>
 
                                         <Label      TextColor="Black" Text="{Binding Course_ID}" 
-                                              HorizontalOptions="EndAndExpand"/>
+                                              Margin="50 ,10, 40, 0"/>
 
-                                        <Button Text="Delete"
+                                        <Button Text="X"
                                                x:Name="Delete_Enrollment"
                                                 BindingContext="{Binding Enroll_ID}"
                                                BackgroundColor="red"

@@ -13,7 +13,8 @@ namespace Az.Models
         public int Course_ID { get; set; }
         public string Course_Code { get; set; }
         public string Course_Name { get; set; }
-      
+        public bool IsSelected { get; set; }
+
 
     }
 }

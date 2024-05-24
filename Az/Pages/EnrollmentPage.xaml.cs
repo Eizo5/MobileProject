@@ -46,6 +46,8 @@ public partial class EnrollmentPage : ContentPage
     {
         var course = e.Item as Course;
         Crs_ID = course.Course_ID;
+
+
     }
 
     private void Enrollment_List_View_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -59,4 +61,5 @@ public partial class EnrollmentPage : ContentPage
         Student_List_View.ItemsSource = App.DBTrans.getAllStudents();
         Course_List_View.ItemsSource = App.DBTrans.getAllCourses();
     }
+
 }

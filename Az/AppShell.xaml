@@ -10,16 +10,16 @@
 
     <TabBar>
 
-        <Tab Title="Student">
+        <Tab Title="Student" Icon="student.png">
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="Main.Page"/>
         </Tab>
 
-        <Tab Title="Course" >
+        <Tab Title="Course" Icon="course.png">
             <ShellContent ContentTemplate="{DataTemplate local:CoursePage}" Route="CourrsePage" />
 
         </Tab>
 
-        <Tab Title="Enrollment">
+        <Tab Title="Enrollment" Icon="enroll.png">
             <ShellContent ContentTemplate="{DataTemplate local:EnrollmentPage}" Route="EnrollmentPage" />
         </Tab>
 

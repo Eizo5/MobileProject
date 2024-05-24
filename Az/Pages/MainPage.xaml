@@ -4,14 +4,12 @@
              x:Class="Az.MainPage"
              Title="Student" >
 
-    <ScrollView  BackgroundColor="#D9D9D9" >
+    <ScrollView  BackgroundColor="LightSteelBlue" >
         <StackLayout  Margin="10">
             <StackLayout >
                 <Label Text="Student Name:" Margin="10"/>
                 <Entry 
                 x:Name="Student_Name"
-                Placeholder="Enter student name"
-                PlaceholderColor="Black"
                 TextColor="Black"
                 WidthRequest="600"
                 BackgroundColor="White"
@@ -20,63 +18,62 @@
                 <Label Text="Student Department:" Margin="10"/>
                 <Entry 
                 x:Name="Student_Department"
-                Placeholder="Enter student department"
-                PlaceholderColor="Black"
                 TextColor="Black"
                 BackgroundColor="White"
                 WidthRequest="600"
                 HorizontalOptions="Start"/>
             </StackLayout>
 
-            <StackLayout  Orientation="Horizontal" Margin="10">
+            <StackLayout  Orientation="Vertical" Margin="10"  HorizontalOptions="Center">
                 <Button x:Name="Add_Student"
                         Text="Add"
                         TextColor="White"
-                        BackgroundColor="Blue"
-                        WidthRequest="70"
+                        BackgroundColor="Purple"
+                        WidthRequest="100"
                         HorizontalOptions="Start"
-                        Margin="2"
+                        Margin="10"
                         Clicked="Add_Student_Clicked"
+                        
                         />
 
                 <Button x:Name="Show_Student"
                     Text="Show"
                     TextColor="White"
-                    BackgroundColor="Green"
-                    WidthRequest="70"
+                    BackgroundColor="blue"
+                    WidthRequest="100"
                     HorizontalOptions="Start"
-                    Margin="2"
+                    Margin="10"
                     Clicked="Show_Student_Clicked"
                         />
             </StackLayout>
 
-            <StackLayout  Margin="10" BackgroundColor="Blue"  >
-                        <Label Text="STUDENTS LIST" FontSize="30" FontAttributes="Bold" />
+            <StackLayout  Margin="10" BackgroundColor="White" WidthRequest="350"  >
+                <Label Text="Students" FontSize="25" FontAttributes="Bold" Margin="10, 15, 0, 0" />
 
                 <StackLayout Orientation="Horizontal" Margin="10">
-                    <Label Text="Student ID" 
+                    <Label Text="ID" 
                               TextColor="Black"
                               HorizontalOptions="Start"
-                           Margin="5"
+                              Margin="5, 5 ,40 ,5"
                            />
 
-                    <Label Text="Student Name" 
+                    <Label Text="Name" 
                                TextColor="Black"
                                HorizontalOptions="Center"
-                                                      Margin="5"
+                               Margin="5, 5 ,40 ,5"
                            />
 
-                    <Label Text="Student Department" 
+                    <Label Text="Department" 
                                TextColor="Black"
-                                HorizontalOptions="End"
-                                                      Margin="5"
+                               HorizontalOptions="End"
+                               Margin="5, 5 ,40 ,5"
                            />
 
 
                 </StackLayout>
 
 
-                <ListView x:Name="Student_List_View"  ItemTapped="Student_List_View_ItemTapped" WidthRequest="600" HorizontalOptions="Start" >
+                <ListView x:Name="Student_List_View"  ItemTapped="Student_List_View_ItemTapped" WidthRequest="340" HorizontalOptions="Start" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -84,17 +81,17 @@
                                     <StackLayout Orientation="Horizontal">
  
                                         <Label TextColor="Black" Text="{Binding Student_ID}"
-                                                 HorizontalOptions="Start" />
+                                                 Margin="20, 10, 0 ,0" />
 
                                         
                                         <Label TextColor="black" Text="{Binding Student_Name}"
-                                               HorizontalOptions="Center"/>
+                                                 Margin="50, 10 ,0 ,0"/>
 
 
                                         <Label TextColor="black" Text="{Binding Student_Department}" 
-                                               HorizontalOptions="EndAndExpand"/>
+                                                Margin="55 ,10, 20, 0"/>
                                         
-                                        <Button Text="Delete"
+                                        <Button Text="X"
                                                 x:Name="Delete_Student"
                                                 BackgroundColor="red"
                                                 BindingContext="{Binding Student_ID}"

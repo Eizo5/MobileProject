@@ -14,5 +14,6 @@ namespace Az.Models
         public int Student_ID { get; set; }
         public int Course_ID { get; set; }
 
+
     }
 }
